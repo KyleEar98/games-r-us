@@ -1,6 +1,6 @@
 
 //api key
-const key = `{971c2f75eaca47e684e3c0b900aeb30b}`;
+const key = `{ac289e0eb46a4cc9b0532aecc60be48c}`;
 const key_url = `key=${key}`;
 
 //Base URL
@@ -34,9 +34,12 @@ const lastYear = `${currentYear - 1}-${currentMonth}-${currentDay}`;
 const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 
 //Popular Games
-const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
-const upcoming_games = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
-const newGames = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
- const popularGamesURL = () => `${base_url}${popular_games}`;
+const popular_games = `games?key=${`ac289e0eb46a4cc9b0532aecc60be48c`}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
+const upcoming_games = `games?key=${`ac289e0eb46a4cc9b0532aecc60be48c`}&dates=${currentDate},${nextYear}&ordering=-added&page_size=10`;
+const newGames = `games?key=${`ac289e0eb46a4cc9b0532aecc60be48c`}&dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
+
+export const popularGamesURL = () => `${base_url}${popular_games}`;
+export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
+export const newGamesURL = () => `${base_url}${newGames}`;
 
 console.log(popularGamesURL());
