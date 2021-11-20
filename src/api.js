@@ -43,3 +43,7 @@ export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${newGames}`;
 
 console.log(popularGamesURL());
+
+//now that we have our url we need to add this to our redux store which is our big state
+//this is where we will add our data
+//2 index.js is where we will wrap our app with the store that holds all of our data in the application

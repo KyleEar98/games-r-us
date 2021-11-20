@@ -9,9 +9,15 @@ const initState = {
 const gamesReducer = (state=initState,action) =>{
     //defining how our data will look like
     switch(action.type){
-        case "FETCH_GAMES":
-            return{...state, 
-                popular: action.payload.popular, //updating popular state above
+        /*8 we cannot just do something like 
+        axios.get('rawg.io/games').then(
+            return data
+        )  because this is asynchronous so we need to add thunk before doing this
+        follow 8 below*/
+        case "FETCH_GAMES"://if dispatch an action called FETCH_GAMES return what we have in state
+            return{...state, //state comes from arguement which = initState 
+                popular: action.payload.popular,
+                 //updating popular state above after getting FETCH_games from gamesAction
                 upcoming: action.payload.upcoming,
                 newGames: action.payload.newGames,
             
@@ -21,7 +27,8 @@ const gamesReducer = (state=initState,action) =>{
     }
 }
 
-//an action is an object that describes whats going to happen
-
-
+/*8 an action is an object that describes whats going to happen.
+redux allows us to do asynchronous fetching in our actions
+next go to main index to talk about thunk*/
+//4 index.js in same directory will have combinereducers
 export default gamesReducer;
