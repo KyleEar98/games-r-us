@@ -27,7 +27,7 @@ const store = createStore(
 //we will import our multiple reducers in rootRuducer that we will then put in createStore
 )
 
-//6 store = store is letting us use gameReducer, next add another reducer to index.js
+//6 store = store is letting us use gameReducer, next add another reducer to other index.js
 //we can just import gamereducer by itself but if we have more than one reducer which we will it wont work
 //which is why we have a rootreducer that can have multiple reducers so we can import them at once
 ReactDOM.render(

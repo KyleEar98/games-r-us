@@ -42,7 +42,15 @@ export const popularGamesURL = () => `${base_url}${popular_games}`;
 export const upcomingGamesURL = () => `${base_url}${upcoming_games}`;
 export const newGamesURL = () => `${base_url}${newGames}`;
 
-console.log(popularGamesURL());
+//game details
+export const gameDetailsURL = (game_id) =>
+`${base_url}games/${game_id}.json?&key=${`ac289e0eb46a4cc9b0532aecc60be48c`}`
+//13 create a new action for game_id
+
+//16 create url and go to detailreducer and add it to initialstate
+export const gameScreenshotURL = (game_id) => 
+`${base_url}games/${game_id}/screenshots?&.json?${`ac289e0eb46a4cc9b0532aecc60be48c`}`
+
 
 //now that we have our url we need to add this to our redux store which is our big state
 //this is where we will add our data

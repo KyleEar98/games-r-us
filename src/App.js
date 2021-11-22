@@ -3,13 +3,13 @@ import React,{useEffect} from "react";
 //practice using redux state management
 //we are using rawg io to fetch our videogame data
 import Home from './pages/Home';
-
+import GlobalStyles from "./components/GlobalStyles";
 
 function App() {
 
   return (
     <div className="App">
-        <h1>yeww</h1>
+      <GlobalStyles />
         <Home />
     </div>
   );
