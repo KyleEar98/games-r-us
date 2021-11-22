@@ -1,16 +1,25 @@
 import React, {useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { loadGames } from "../actions/gamesAction";
+import GameDetail from '../components/GameDetail'; //17
 //Components
 import Game from "../components/Game";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { newGamesURL } from "../api";
+//18
+import { useLocation } from "react-router";
 
 //11 is this whole file go to Game.js after to print all games
 //runs loadGames action in gamesAction where that then fetches games and sends it to reducer in gamesReducer
 
 const Home = () =>{
+    //18 get the current location we added link in Game.js
+    const location = useLocation();
+    const pathId = location.pathname.split("/")[2];//split everytime there is a slash
+    //returns an array [" ",game,"3213(id num)"] first item in array is the slash
+    //we want the id so we get the 2nd element of array
+    //18
     const dispatch = useDispatch();
     //when component loads add useEffect 
     useEffect(() =>{
@@ -22,6 +31,9 @@ const Home = () =>{
     //extracting games newGames upcoming games data
     return(
         <GameList>
+            {/* 17 gameDetail is the detail of the game pop up when we click on a game
+             */}
+           {pathId &&  <GameDetail /> }
             <h2>Upcoming games</h2>
             <Games>
                 {upcoming.map(game => (//access to each game

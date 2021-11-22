@@ -12,7 +12,7 @@ const detailReducer = (state=initialState,action) => {
                 //comes from action where we add payload.game
                 
                 //16 go to action after 
-                screen: action.payload.screen,
+                screen: action.payload.screen,//send payload with screen
             };
             default: 
                 return{...state}

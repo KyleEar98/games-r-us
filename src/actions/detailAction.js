@@ -5,7 +5,7 @@ import { gameDetailsURL,gameScreenshotURL } from "../api"
 export const loadDetail = (id) => async (dispatch) =>{
     //pass id to gameDetailsURL when we dispatch loadDetail
     const detailData = await axios.get(gameDetailsURL(id));
-    const screenShotData = await axios.get(gameScreenshotURL(id));
+    const screenShotData = await axios.get(gameScreenshotURL(id));//api request
     dispatch({
         type: "GET_DETAIL",
         payload:{

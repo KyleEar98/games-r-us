@@ -48,8 +48,8 @@ export const gameDetailsURL = (game_id) =>
 //13 create a new action for game_id
 
 //16 create url and go to detailreducer and add it to initialstate
-export const gameScreenshotURL = (game_id) => 
-`${base_url}games/${game_id}/screenshots?&.json?${`ac289e0eb46a4cc9b0532aecc60be48c`}`
+export const gameScreenshotURL = (game_id) =>
+  `${base_url}games/${game_id}/screenshots?key=${`ac289e0eb46a4cc9b0532aecc60be48c`}`;
 
 
 //now that we have our url we need to add this to our redux store which is our big state
