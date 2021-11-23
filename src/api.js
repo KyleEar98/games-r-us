@@ -55,3 +55,6 @@ export const gameScreenshotURL = (game_id) =>
 //now that we have our url we need to add this to our redux store which is our big state
 //this is where we will add our data
 //2 index.js is where we will wrap our app with the store that holds all of our data in the application
+
+export const searchGameURL = (game_name) =>
+ `${base_url}games?search=${game_name} &page_size=9?key=${`ac289e0eb46a4cc9b0532aecc60be48c`}`

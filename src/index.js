@@ -7,7 +7,7 @@ import {createStore, applyMiddleware, compose} from 'redux';//allows 2 params th
 import rootReducer from './reducers';
 import { Provider } from 'react-redux';//connect react app to redux
 import thunk from "redux-thunk";
-import { Router } from 'react-router-dom';//18
+import { BrowserRouter } from 'react-router-dom';//18
 /*9 here we added thunk
 since create store only holds 2 parameters so we cannot add thunk after REDUX DEVTOOLS.
 so we need to combine 2 into 1 using applyMiddleware and compose
@@ -35,9 +35,9 @@ ReactDOM.render(
   <React.StrictMode>
     {/* add store as a prop */}
     <Provider store={store}> 
-    <Router>
+    <BrowserRouter>
     <App />
-    </Router>
+    </BrowserRouter>
     
     </Provider>
   </React.StrictMode>,

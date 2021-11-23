@@ -5,7 +5,7 @@ import GameDetail from '../components/GameDetail'; //17
 //Components
 import Game from "../components/Game";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
 import { newGamesURL } from "../api";
 //18
 import { useLocation } from "react-router";
@@ -31,9 +31,13 @@ const Home = () =>{
     //extracting games newGames upcoming games data
     return(
         <GameList>
+            <AnimateSharedLayout type="crossfade">
+            <AnimatePresence>{pathId &&  <GameDetail pathId={pathId} /> }</AnimatePresence>
+            {/* 22 must wrap the component we want to transition to and must have some kind of toggle
+            we also must give some kind of id to both components we want to transition we do that in
+            game.js */}
             {/* 17 gameDetail is the detail of the game pop up when we click on a game
              */}
-           {pathId &&  <GameDetail /> }
             <h2>Upcoming games</h2>
             <Games>
                 {upcoming.map(game => (//access to each game
@@ -70,6 +74,7 @@ const Home = () =>{
                     //passing info about game as props
                 ))}
             </Games>
+            </AnimateSharedLayout>
         </GameList>
     )
 }

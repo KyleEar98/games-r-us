@@ -1,6 +1,6 @@
 //an action is an object that describes whats going to happen
 import axios from "axios";
-import {popularGamesURL,newGamesURL,upcomingGamesURL} from '../api';
+import {popularGamesURL,newGamesURL,upcomingGamesURL, searchGameURL} from '../api';
 
 //10 action creator then we create Home.js to import this
 
@@ -24,6 +24,17 @@ export const loadGames = () => async (dispatch) =>{
             upcoming: upcomingData.data.results,
             newGames: newGamesData.data.results,
 
+        }
+    })
+}
+
+export const fetchSearch = (game_name) => async(dispatch)=> {
+    const searchGames = await axios.get(searchGameURL(game_name));
+
+    dispatch({
+        type: 'FETCH_SEARCHED',
+        payload:{
+            searched: searchGames.data.results,
         }
     })
 }
